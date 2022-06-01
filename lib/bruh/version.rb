@@ -4,5 +4,5 @@
 # 2022
 
 module Bruh
-  VERSION = "0.1.0-beta"
+  VERSION = "0.1.0"
 end
