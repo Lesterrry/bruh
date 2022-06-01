@@ -103,7 +103,7 @@ module Bruh
 				file = File.new(Config.cache_file_location, 'w')
 				file.puts(Marshal.dump($results))
 			rescue
-				terminate_with "Unable to write to file, terminating..."
+				terminate_with "Unable to write to file, terminating...", $verbose
 			end
 			break
 		end
