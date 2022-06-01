@@ -13,7 +13,7 @@ module Bruh
 			if verbose then
 				puts message
 			else
-				Internal.report message
+				report message
 			end
 			exit 1
 		end

@@ -62,13 +62,13 @@ module Bruh
 				attempt_two = true
 				next
 			end
-			puts form_hash.inspect
+			puts form_hash.inspect if $verbose
 			puts "Fetching app id..." if $verbose
 			app_id = Internal.get_app_id(form_hash, Config.reg_code, Config.id_num, $jar)
 			if app_id.nil?
 				Internal.terminate_with "App ID request failed, terminating...", $verbose
 			end
-			puts app_id.inspect
+			puts app_id.inspect if $verbose if $verbose
 			puts "Fetching exams results..." if $verbose
 			parsed = Internal.get_ege_data(app_id, $jar)
 			if parsed.nil?
@@ -94,7 +94,7 @@ module Bruh
 				if $verbose
 					puts s
 				else
-					report s
+					Internal.report s
 				end
 			elsif $verbose
 				puts "Nothing"
