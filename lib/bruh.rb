@@ -58,6 +58,9 @@ module Bruh
 			puts "Fetching form hash..." if $verbose
 			form_hash = Internal.get_form_hash($jar)
 			if form_hash.nil?
+				if attempt_two
+					Internal.terminate_with "Newly fetched cookies are unusable, terminating...", $verbose
+				end
 				puts "The cookies are probably outdated, fetching new..." if $verbose
 				attempt_two = true
 				next
